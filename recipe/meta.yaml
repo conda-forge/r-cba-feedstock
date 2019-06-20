@@ -1,4 +1,4 @@
-{% set version = '0.2-19' %}
+{% set version = '0.2-21' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,18 +10,18 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/cba_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/cba/cba_{{ version }}.tar.gz
-  sha256: 54686d67b6b43b27c4143a593f6669fc0cc661188f91fed80b7be6220fd3da5b
+  sha256: a61e787458e2df5049bea797bb442d6c86ebc9aa9b4dfbf043e23adac15d5048
 
 build:
   merge_build_host: True  # [win]
-  number: 1000
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
@@ -51,10 +51,21 @@ about:
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
-    - dpryan79
+    - conda-forge/r
+
+# Package: cba
+# Type: Package
+# Title: Clustering for Business Analytics
+# Version: 0.2-21
+# Author: Christian Buchta and Michael Hahsler
+# Maintainer: Christian Buchta <christian.buchta@wu.ac.at>
+# Description: Implements clustering techniques such as Proximus and Rock, utility functions for efficient computation of cross distances and data manipulation.
+# Depends: R (>= 2.10), grid, proxy
+# Imports: stats, graphics, grDevices, methods
+# Suggests: gclus, colorspace
+# Encoding: latin1
+# License: GPL-2
+# NeedsCompilation: yes
+# Packaged: 2019-04-18 15:33:05 UTC; hornik
+# Repository: CRAN
+# Date/Publication: 2019-04-18 15:46:59 UTC
