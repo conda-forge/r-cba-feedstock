@@ -43,7 +43,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=cba
-  license: GPL-2
+  license: GPL-2.0-only
   summary: 'Implements clustering techniques such as Proximus and Rock, utility functions for
     efficient computation of cross distances and data manipulation. '
   license_family: GPL2
