@@ -1,4 +1,4 @@
-{% set version = '0.2-21' %}
+{% set version = "0.2-22" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/cba_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/cba/cba_{{ version }}.tar.gz
-  sha256: a61e787458e2df5049bea797bb442d6c86ebc9aa9b4dfbf043e23adac15d5048
+  sha256: f1dc8993f7b41b5bf3258939fb4c9eda5fda0b08f5026727245fd2d3fcbc9040
 
 build:
-  merge_build_host: True  # [win]
-  number: 3
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -44,10 +44,9 @@ test:
 about:
   home: https://CRAN.R-project.org/package=cba
   license: GPL-2.0-only
-  summary: 'Implements clustering techniques such as Proximus and Rock, utility functions for
-    efficient computation of cross distances and data manipulation. '
+  summary: 'Implements clustering techniques such as Proximus and Rock, utility functions for efficient computation of cross distances and data manipulation. '
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
