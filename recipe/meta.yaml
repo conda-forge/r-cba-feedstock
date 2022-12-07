@@ -1,4 +1,4 @@
-{% set version = "0.2-22" %}
+{% set version = "0.2-23" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/cba_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/cba/cba_{{ version }}.tar.gz
-  sha256: f1dc8993f7b41b5bf3258939fb4c9eda5fda0b08f5026727245fd2d3fcbc9040
+  sha256: d698b0001a2f14a1e8afce0960b04b5bfbe4617f3068429f81020fbbd52c54a1
 
 build:
   merge_build_host: true  # [win]
